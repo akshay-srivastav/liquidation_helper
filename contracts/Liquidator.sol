@@ -129,14 +129,6 @@ contract Liquidator is DydxFlashloaner, bZxFlashLoaner, Ownable {
         uint256 flashLoanFee = flashLoanAmount.mul(bZxFeePercentage).div(1e20);
         uint256 repayAmount = flashLoanAmount.add(flashLoanFee);
 
-        if (IERC20(loanToken).balanceOf(address(this)) < repayAmount) {
-            IERC20(loanToken).transferFrom(
-                msg.sender,
-                address(this),
-                flashLoanFee + 1
-            );
-        }
-
         _callDataBzx = CallDataBzx({
             iniCollateralTokenBal: IERC20(collateralToken).balanceOf(
                 address(this)

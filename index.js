@@ -21,7 +21,7 @@ const web3 = new Web3(provider);
 const interval = 15;
 
 console.log('Script Started...');
-console.log(`\nListening every ${interval} seconds...\n`);
+console.log(`\nListening every ${interval} seconds...`);
 
 const contractAddresses = addresses[network];
 
@@ -35,9 +35,10 @@ const start = async () => {
 
     world.txIssuerWallet = web3.eth.accounts.privateKeyToAccount(process.env.PRIVATEKEY);
     world.txIssuerWallet.nonce = await web3.eth.getTransactionCount(world.txIssuerWallet.address, 'pending');
+    console.log(`\nAccount for Liquidation txn: ${world.txIssuerWallet.address}`);
 
-    // listen(world)    // for testing
-    startCron();
+    listen(world)    // for testing
+    // startCron();
   } catch (error) {
     console.error(error);
   }

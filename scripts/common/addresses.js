@@ -1,6 +1,6 @@
 module.exports = {
     kovan: {
-        Liquidator: '0x7dC0782C3B6a529D6274fbeC99465E8F0140874C',
+        Liquidator: '0x6CB313E21c0A3718964444C2e971448f4bFB4afa',
         Bzx: '0xAbd9372723C735D426D0a760D047206Fe115ee6d',
         iTokenList: [
             ['1', '0x9D2015Dd5306C08bDd8530605137d26c04DEDBD8', '0xe65d99a06d0ded0d318e31db3ae5d77629c625fc', 'Fulcrum fWETH iToken', 'ifWETH', '1'],
